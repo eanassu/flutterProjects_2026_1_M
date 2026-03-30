@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/tip_calculator.dart';
 
 
-// Importe o seu DatabaseHelper
-
-// Importações específicas para desktop e web
-import 'package:flutter/foundation.dart'; // Para kIsWeb
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
-
   runApp(const MyApp());
 }
 
@@ -67,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 border: OutlineInputBorder(),
               ),
             ),
+            
             TextField(
               controller: _controller2,
               decoration: InputDecoration(
@@ -84,10 +80,19 @@ class _MyHomePageState extends State<MyHomePage> {
               'A soma é: $soma',
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
+            ElevatedButton(
+              onPressed: () {
+                // Navega para a SecondScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TipCalculator()),
+                );
+              },
+              child: const Text('Ir para a Calculadora de Gorjeta'),
+            ),
           ],
         ),
       ),
-    
     );
   }
 }

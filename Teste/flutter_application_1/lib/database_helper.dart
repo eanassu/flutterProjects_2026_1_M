@@ -4,6 +4,13 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+// para a versão WEB, são necessários os arquivos:
+// sqflite_sw.js
+// sqflite_SW.wasm
+// se for criar um novo projeto, para a versão WEB
+// funcionar colocar esses arquivos na pasta web so seu 
+// projeto, além das dependências
+
 class DatabaseHelper {
   static final DatabaseHelper _instance=DatabaseHelper._internal();
   static Database? _database;

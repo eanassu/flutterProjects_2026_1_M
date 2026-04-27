@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/desenho.dart';
 import 'package:flutter_application_1/home_screen.dart';
 import 'package:flutter_application_1/tip_calculator.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -116,6 +117,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('Ir para Tarefas'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DrawingScreen()),
+                );
+              },
+              child: const Text('Ir para Tela de Desenho'),
             ),
 
           ],
